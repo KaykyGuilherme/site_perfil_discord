@@ -572,6 +572,10 @@ header{
 
 }
 
+.felipe:hover .user{
+    background-image: url("../img/user/nust/gif.gif");
+}
+
 .julia .banner{
     background-image: url("../img/user/julia/banner.gif");
 }
