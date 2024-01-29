@@ -1,0 +1,603 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*{
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root{
+    --cor_escura1: #222;
+    --cor_escura2: #111;
+    --cor_escura3: #000;
+
+    --cor_clara1: #eee;
+}
+
+html{
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+}
+
+header{
+    background: var(--cor_escura2);
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+}
+
+.nav__all{
+    display: flex;
+    align-items: center; justify-content: space-between;
+    padding: .5rem 4rem;
+}
+
+.nav__logo img{
+    width: 5rem;
+}
+
+.nav__list{
+    display: flex;
+    list-style-type: none;
+    gap: 1rem;
+}
+
+.nav__list a{
+    display: block;
+    overflow: hidden;
+    position: relative;
+    padding: .8rem;
+    color: #eee;
+    text-transform: capitalize;
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: .2s;
+
+}
+
+.nav__list a span:nth-child(1){
+    position: absolute;
+    background: linear-gradient(90deg, transparent, var(--cor_clara1));
+    width: 100%;
+    height: 2px;
+    top: 0;
+    left: -100%;
+    animation: linha__top 1s linear infinite;
+    animation-delay: .5s;
+}
+
+.menu__hamburguer{
+    display: none;
+}
+
+@keyframes linha__top {
+    0%{
+        left: -100%;
+    }
+
+    100%{
+        left: 100%;
+    }
+}
+
+.nav__list a span:nth-child(2){
+    position: absolute;
+    background: linear-gradient(transparent, var(--cor_clara1));
+    width: 2px;
+    height: 100%;
+    top: -100%;
+    right: 0;
+    animation: linha__right 1s linear infinite;
+    animation-delay: 1s;
+}
+
+@keyframes linha__right {
+    0%{
+        top: -100%;
+    }
+    100%{
+        top: 100%;
+    }
+}
+
+.nav__list a span:nth-child(3){
+    position: absolute;
+    background: linear-gradient(transparent, var(--cor_clara1));
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 100%;
+    animation: linha__bottom 1s linear infinite;
+    animation-delay: 1.5s;
+}
+
+@keyframes linha__bottom {
+    0%{
+        left: 100%;
+    }
+    100%{
+        left: -100%;
+    }
+}
+
+.nav__list a span:nth-child(4){
+    position: absolute;
+    background: linear-gradient(360deg, transparent, var(--cor_clara1));
+    width: 2px;
+    height: 100%;
+    top: 100%;
+    left: 0;
+    animation: linha__left 1s linear infinite;
+}
+
+@keyframes linha__left {
+    0%{
+        top: 100%;
+    }
+    100%{
+        top: -100%;
+    }
+}
+
+.nav__list a span{
+    opacity: 0;
+}
+
+.nav__list a:hover span{
+    opacity: 1;
+}
+
+.nav__list a:hover{
+    transform: scale(1.1);
+    box-shadow: 0 0 1rem var(--cor_clara1);
+}
+
+@media screen and (max-width: 920px) {
+    .nav__list{
+        box-shadow: 0 .5rem 1rem rgb(0 0 0 / .6);
+        position: absolute;
+        background: var(--cor_escura1);
+        width: 100%;
+        top: 6.4rem;
+        left: 0;
+        height: 0rem;
+        display: grid;
+        text-align: center;
+        padding: 0rem;
+        overflow: hidden;
+        transition: .2s;
+    }
+
+    .nav__list a{
+    width: 50%;
+    margin: auto;
+    border-bottom: 1px solid var(--cor_escura2);
+    }
+
+    .nav__list a:hover{
+        box-shadow: 0 0 .3rem var(--cor_clara1),
+                    0 0 2rem rgb(0 0 0 / 1);
+    }
+
+    .menu__hamburguer{
+        width: 3rem;
+        border-top: 4px solid var(--cor_clara1);
+        display: block;
+        cursor: pointer;
+        transition: .2s;
+
+    }
+
+    .menu__hamburguer::before, .menu__hamburguer::after{
+        content: "";
+        display: block;
+        width: 100%;
+        height: 4px;
+        background: var(--cor_clara1);
+        margin-top: 8px;
+        transition: .2s;
+    }
+
+    .active .nav__list{
+        height: 25rem;
+        padding: 1rem;
+    }
+
+    .active .menu__hamburguer{
+        border-color: transparent;
+    }
+
+    .active .menu__hamburguer::before{
+        rotate: 225deg;
+    }
+
+    .active .menu__hamburguer::after{
+        rotate: -225deg;
+        position: relative;
+        bottom: .7rem;
+    }
+}
+
+.perfil__user{
+    background: var(--cor_escura2);
+    color: var(--cor_clara1);
+    padding: .5rem 0;
+}
+
+.container__gif{
+    background: url("../img/wallpaper__gif.gif") no-repeat center/cover;
+    height: 16rem;
+    width: 100%;
+    position: relative;
+    margin-bottom: 3rem;
+}
+
+.foto_de_perfil{
+    background: url("../img/user/kayky.jpg") no-repeat top/cover;
+    border: 5px solid var(--cor_escura2);
+    width: 10rem; height: 10rem;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    bottom: -8rem;
+    left: 50%;
+}
+
+.kayky__nome{
+    text-align: center;
+    font-size: 2rem;
+    text-transform: capitalize;
+}
+
+.kayky__nome::after{
+    content: "|";
+    margin: .4rem;
+    animation: piscar .8s linear infinite;
+}
+
+@keyframes piscar {
+    0%, 100%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 0  ;
+    }
+}
+
+.links__sociais{
+    margin: 1rem;
+}
+
+.links__sociais h2{
+    text-align: center;
+    font-size: .8rem;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--cor_clara1);
+    width: 8rem;
+    margin: .5rem auto;
+}
+
+.links__list{
+    display: flex;
+    list-style-type: none;
+    align-content: center;
+    justify-content: center;
+    gap: 3rem;
+}
+
+.links__list li:hover{
+    transform: scale(1.1);
+}
+
+.links__list a{
+    color: #eee;
+    text-decoration: none;
+    font-size: 2rem;
+    display: grid;
+    align-items: center; justify-content: center;
+    position: relative;
+}
+
+.links__list p{
+    font-size: .9rem;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    bottom: 0;;
+    opacity: 0;
+    color: var(--cor_clara1);
+    font-weight: 700;
+    display: block;
+    padding: .3rem;
+    border-radius: 1rem;
+    border: 3px solid currentColor;
+    text-transform: uppercase;
+    pointer-events: none;
+    transition: .2s;
+}
+
+.links__list a:hover p{
+    opacity: 1;
+    bottom: -3.6rem;
+}
+
+.sobre__mim{
+    background: var(--cor_escura1);
+    padding: 1rem;
+}
+
+.sobre__mim h3{
+    color: var(--cor_clara1);
+    text-transform: uppercase;
+    border-top: 1px solid var(--cor_clara1);
+    width: 10rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.list__sobre__mim{
+    list-style-type: none;
+    display: grid;
+    align-items: center; justify-content: center;
+    gap: 1rem;
+    padding-left: 3rem;
+    color: #eee;
+    position: relative;
+    max-width: 30rem;
+    margin: 0 auto;
+}
+
+.list__sobre__mim p{
+    text-transform: capitalize;
+}
+
+.linha__Bolas{
+    height: 100%;
+    width: 3px;
+    display: block;
+    left: 1.3rem;
+    position: absolute;
+    background: var(--cor_clara1);
+}
+
+.linha__Bolas .bolas{
+    position: absolute;
+    width: 1rem; height: 1rem;
+    background: var(--cor_clara1);
+    border-radius: 50%;
+    left: -.37rem;
+}
+
+.bola__1{
+    top: 0rem;
+}
+
+.bola__2{
+    bottom: 0;;
+}
+
+.list__meus__jogos{
+    padding: 1rem;
+}
+
+.list__meus__jogos p{
+    color:  var(--cor_clara1);
+}
+
+.container__jogos{
+    display: grid;
+    align-items: center; justify-content: center;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+.card_game{
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 0 1rem rgb(0 0 0 / .7);
+}
+
+.card_game .card__top{
+    background: url("../img/wallpaper__valorant.jpg") no-repeat center/cover;
+    height: 8rem;
+    border-radius: .3rem;
+}
+
+.card_game .imagem__logo{
+    background: url("../img/logo__valorant.png") no-repeat center/cover;
+    height: 5em; width: 5rem;
+    position: absolute;
+    bottom: 0;
+}
+
+.card_game p{
+    color: var(--cor_escura2);padding: .2rem;
+    text-align: end;
+    background: var(--cor_clara1);
+    font-weight: 600;
+}
+
+.card_game .nome_game{
+    background: transparent;
+    position: absolute;
+    top: 2.8rem;
+    left: .5rem;
+    color: var(--cor_clara1);
+    font-size: 1.5rem;
+    text-transform: uppercase;
+}
+
+.roblox .card__top{
+    background-image: url("../img/wallpaper__roblox.png");
+}
+
+.roblox .imagem__logo{
+    background: url("../img/logo__roblox.jpg") no-repeat center/cover;
+    border-radius: 50%;
+}
+
+.estudos{
+    background: var(--cor_escura2);
+    color: var(--cor_clara1);
+}
+
+.estudos{
+    padding: 1rem;
+}
+
+.estudos h3{
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--cor_clara1);
+    width: 13rem;
+    text-align: center;
+    margin: .8rem auto;
+    margin-bottom: 1rem;
+}
+
+.esutdos__container{
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.estudo{
+    transition: .2s;
+    border-radius: .5rem;
+    padding: .5rem;
+}
+
+.estudo img{
+    width: 10rem; height: 10rem;
+    border-radius: 50%;
+    border: 4px solid var(--cor_escura1);
+}
+
+.estudo h4{
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.estudo:hover{
+    transform: scale(1.1);
+    box-shadow: 0 0 .5rem var(--cor_escura3);
+    cursor: pointer;
+}
+
+.melhores__amigos{
+    padding: 1rem;
+    background: var(--cor_escura1);
+}
+
+.container__amigos{
+    gap: 2rem;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center; justify-content: center;
+}
+
+.melhores__amigos h3{
+    color: var(--cor_clara1);
+    text-transform: uppercase;
+    margin: 1rem;
+    text-align: center;
+    border-bottom: 1px solid var(--cor_clara1);
+}
+
+.amigo{
+    background: linear-gradient(var(--cor_escura1), var(--cor_escura3));
+    width: 17rem; height: 20rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 1rem var(--cor_escura3);
+    overflow: hidden;
+    position: relative;
+}
+
+.amigo .banner{
+    background: url("../img/user/livia/banner.gif") no-repeat center/cover;
+    width: 100%; height: 6rem;
+    position: relative;
+}
+
+.amigo .user{
+    position: absolute;
+    width: 7rem; height: 7rem;
+    background: url("../img/user/livia/foto.jpg") no-repeat top/cover;
+    left: .5rem;
+    bottom: -3rem;
+    border-radius: 50%;
+    border: 3px solid var(--cor_escura1);
+}
+
+.nome__user{
+    margin: 1rem;
+    text-align: end;
+    color: var(--cor_clara1);
+    text-transform: capitalize;
+    font-size: 3rem;
+    font-weight: 600;
+}
+
+.redes__sociais{
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 2rem;
+    right: -1rem;
+    font-size: 2rem;
+    background: var(--cor_escura1);
+    width: 3rem; height: 3rem;
+    display: flex;
+    align-items: center; justify-content: center;
+    border-radius: 50%;
+    transition: .2s;
+}
+
+.redes__sociais:hover{
+    background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+}
+
+.redes__sociais a{
+    text-decoration: none;
+    color: #eee;
+}
+
+.felipe .banner{
+    background-image: url("../img/user/nust/banner.gif");
+}
+
+.felipe .user{
+    background: url("../img/user/nust/imagem.jpg") no-repeat center/cover;
+
+}
+
+.julia .banner{
+    background-image: url("../img/user/julia/banner.gif");
+}
+
+.julia .user{
+    background: url("../img/user/julia/imagem.jpg") no-repeat center/cover;
+}
+
+footer{
+    background: var(--cor_escura1);
+    color: var(--cor_clara1);
+    text-align: center;
+    text-transform: capitalize;
+}
+
+footer p{
+    opacity: .3;
+}
+
+.observado{
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: .8s;
+}
+
+.aparecer{
+    opacity: 1;
+    transform: translateX(0);
+}

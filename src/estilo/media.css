@@ -1,0 +1,129 @@
+@media screen and (min-width: 615px) {
+    *{
+        transition: .2s;
+    }
+
+    .links__sociais h2{
+        font-size: 1rem;
+        width: 10rem;
+        margin-bottom: 1rem;
+    }
+
+    .links__list a{
+        font-size: 3rem;
+    }
+
+    .list__sobre__mim{
+        margin: 0;
+    }
+
+    .card_game .card__top{
+        height: 12rem;
+    }
+    
+    .card_game .imagem__logo{
+        height: 8rem; width: 8rem;
+    }
+    
+    .card_game .nome_game{
+        top: 3.3rem;
+        font-size: 2rem;
+    }
+    
+    .esutdos__container{
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .estudo{
+        display: grid;
+        align-content: center;
+        justify-content: center;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .container__jogos{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .list__meus__jogos h3{
+        width: 17rem;
+        margin: 1rem auto;
+        font-size: 2rem;
+    }
+
+    .esutdos__container img{
+        width: 12rem; height: 12rem;
+    }
+    
+    .estudo h4{
+        margin: 1rem;
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .nav__list a{
+        font-size: 1.3rem;
+    }
+
+    .container__gif{
+        height: 20rem;
+    }
+
+    .sobre__mim > h3{
+        margin: 1rem auto;
+        text-align: center;
+        width: 17rem;
+        font-size: 2rem;
+    }
+
+    .list__sobre__mim{
+        max-width: 50rem;
+    }
+
+    .list__sobre__mim p{
+        font-size: 1.5rem;
+        width: 100%;
+    }
+    
+    .linha__Bolas{
+        left: 5rem;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .list__sobre__mim{
+        margin: 0 auto;
+    }
+
+    .card_game .card__top{
+        height: 16rem;
+    }
+
+    .card_game .nome_game{
+        top: 6rem;
+        font-size: 3rem;
+    }
+
+    .esutdos__container{
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .amigo{
+        width: 20rem; height: 20rem;
+    }
+}
+
+@media screen and (min-width: 1500px){
+
+    .card_game p{
+        font-size: 1.5rem;
+    }
+
+    .amigo{
+        width: 25rem; height: 25rem;
+    }
+}
