@@ -589,6 +589,7 @@ footer{
 
 footer p{
     opacity: .3;
+    padding-bottom: .7rem;
 }
 
 .observado{
