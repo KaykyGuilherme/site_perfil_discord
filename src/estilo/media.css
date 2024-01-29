@@ -115,6 +115,10 @@
     .amigo{
         width: 20rem; height: 20rem;
     }
+    
+    .amigo .banner{
+        height: 7rem;
+    }
 }
 
 @media screen and (min-width: 1500px){
@@ -125,5 +129,9 @@
 
     .amigo{
         width: 25rem; height: 25rem;
+    }
+
+    .amigo .banner{
+        height: 9rem;
     }
 }
