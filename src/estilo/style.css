@@ -563,6 +563,10 @@ header{
     color: #eee;
 }
 
+.livia:hover .user{
+    background-image: url("../img/user/livia/gif.gif");
+}
+
 .felipe .banner{
     background-image: url("../img/user/nust/banner.gif");
 }
@@ -582,6 +586,10 @@ header{
 
 .julia .user{
     background: url("../img/user/julia/imagem.jpg") no-repeat center/cover;
+}
+
+.julia:hover .user{
+    background-image: url("../img/user/julia/bc99611034af4348a9030ec0328100ca.gif");
 }
 
 footer{
